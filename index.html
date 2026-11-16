@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puppy Palace Dog Wash | Self-Service Dog Wash in Woodlawn, Baltimore</title>
+<meta name="description" content="Woodlawn's first self-service dog wash. Self-service baths, full-service washes and professional grooming at 1724 Woodlawn Dr, Baltimore, MD. $15 self-wash Sundays.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F8F9;
+  --foam:#E1EEF2;
+  --ink:#142540;
+  --ink-soft:#4A5B73;
+  --carpet:#B8232B;
+  --carpet-deep:#8E1820;
+  --sun:#F2C14E;
+  --line:#CFDDE3;
+  --white:#FFFFFF;
+  --radius-lg:22px;
+  --radius-sm:10px;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.12;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,5.6vw,4.2rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+h3{font-size:1.45rem}
+p{max-width:62ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font:600 1rem "Figtree",sans-serif;text-decoration:none;padding:.95em 1.5em;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-carpet{background:var(--carpet);color:#fff}
+.btn-carpet:hover{background:var(--carpet-deep)}
+.btn-line{border-color:var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn svg{width:18px;height:18px}
+
+/* top strip */
+.strip{background:var(--ink);color:#fff;font-size:.88rem}
+.strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px}
+.strip a{text-decoration:none;opacity:.9}
+.strip a:hover{opacity:1;text-decoration:underline}
+.strip .socials{display:flex;gap:16px}
+.strip .sunday{color:var(--sun);font-weight:600}
+
+/* header */
+header.site{position:sticky;top:0;z-index:40;background:rgba(245,248,249,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:46px;height:46px;object-fit:cover;border-radius:50%;background:#fff;border:2px solid var(--line)}
+.brand span{font-family:"Young Serif",serif;font-size:1.3rem;line-height:1.05}
+.brand small{display:block;font-family:"Figtree",sans-serif;font-size:.78rem;color:var(--ink-soft);letter-spacing:.01em}
+nav.main{display:flex;align-items:center;gap:28px}
+nav.main a{text-decoration:none;font-weight:500;font-size:.98rem}
+nav.main a:not(.btn):hover{color:var(--carpet)}
+nav.main .btn{padding:.7em 1.25em}
+.menu-toggle{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:var(--ink)}
+.menu-toggle svg{width:26px;height:26px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:64px 0 0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end}
+.hero-copy{padding-bottom:72px}
+.hero-copy .where{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--carpet);margin-bottom:22px}
+.hero-copy .where svg{width:18px;height:18px}
+.hero-copy h1{margin-bottom:22px}
+.hero-copy p.lead{font-size:1.15rem;color:var(--ink-soft);margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.status{display:inline-flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:9px 16px 9px 12px;font-size:.95rem}
+.dot{width:10px;height:10px;border-radius:50%;background:#9AA8B5;flex:none}
+.dot.open{background:#2E9E5B;box-shadow:0 0 0 4px rgba(46,158,91,.18)}
+.dot.closed{background:var(--carpet)}
+
+/* the red carpet: the one bold move */
+.runner{position:relative;align-self:stretch;display:flex;justify-content:center}
+.runner::before{content:"";position:absolute;top:-64px;bottom:0;left:50%;transform:translateX(-50%);width:72%;
+  background:
+    repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 2px,transparent 2px 6px),
+    linear-gradient(180deg,var(--carpet-deep),var(--carpet) 35%,var(--carpet));
+  border-left:6px double var(--sun);border-right:6px double var(--sun)}
+.runner figure{position:relative;margin-top:8px;width:100%;max-width:420px;aspect-ratio:3/4;border-radius:200px 200px var(--radius-lg) var(--radius-lg);overflow:hidden;background:var(--foam);border:8px solid var(--paper);box-shadow:0 30px 60px -30px rgba(20,37,64,.55)}
+.runner figure img{width:100%;height:100%;object-fit:cover}
+.runner figure.mascot{background:#fff;aspect-ratio:5/7;display:flex;flex-direction:column;align-items:center;padding:58px 20px 14px;gap:2px}
+.runner figure.mascot img{height:auto;object-fit:contain}
+.runner figure.mascot .tag{width:86%;flex:none}
+.runner figure.mascot .dog{width:100%;flex:1;min-height:0;height:100%}
+@media (prefers-reduced-motion:no-preference){.runner figure.mascot .tag{animation:rise .7s .9s cubic-bezier(.2,.7,.2,1) both}}
+.sun-tag{position:absolute;right:-6px;bottom:56px;background:var(--sun);color:var(--ink);border-radius:50%;width:132px;height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-8deg);box-shadow:0 14px 30px -14px rgba(20,37,64,.5)}
+.sun-tag b{font-family:"Young Serif",serif;font-size:2.3rem;font-weight:400;line-height:1}
+.sun-tag span{font-size:.82rem;font-weight:600;line-height:1.2;margin-top:4px}
+
+/* sections */
+section{padding:96px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.section-head p{color:var(--ink-soft)}
+
+/* services */
+.services{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.svc figure{aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;background:var(--foam);margin-bottom:22px}
+.svc figure img{width:100%;height:100%;object-fit:cover}
+.svc .price{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:14px}
+.svc .price strong{font-family:"Young Serif",serif;font-weight:400;font-size:1.5rem;color:var(--carpet)}
+.svc .price small{font-size:.92rem;color:var(--ink-soft)}
+.svc p{color:var(--ink-soft);margin-bottom:14px}
+.svc ul{list-style:none;display:grid;gap:6px;margin-bottom:18px;font-size:.96rem}
+.svc li{padding-left:24px;position:relative}
+.svc li::before{content:"";position:absolute;left:2px;top:.55em;width:10px;height:10px;border-radius:50%;border:2px solid var(--carpet)}
+.svc a.more{font-weight:600;color:var(--carpet);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
+.svc a.more:hover{color:var(--carpet-deep)}
+.pill{display:inline-block;font-size:.85rem;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--foam);margin-bottom:12px}
+
+/* full service sizer */
+.sizer{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.sizes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:28px 0 22px}
+.sizes button{font:600 .95rem "Figtree",sans-serif;background:var(--white);color:var(--ink);border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:14px 4px 12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;transition:border-color .15s,background .15s}
+.sizes button:hover{border-color:var(--ink)}
+.sizes button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sizes svg{height:28px;width:auto;fill:currentColor}
+.sizes small{font-weight:500;font-size:.75rem;opacity:.75}
+.quote{background:var(--ink);color:#fff;border-radius:var(--radius-lg);padding:40px;position:relative;overflow:hidden}
+.quote .label{opacity:.75;font-size:.95rem}
+.quote .range{font-family:"Young Serif",serif;font-size:clamp(2.6rem,6vw,4rem);line-height:1.05;margin:8px 0 6px}
+.quote .weight{opacity:.8;margin-bottom:26px}
+.quote p.note{opacity:.75;font-size:.95rem;margin-bottom:24px}
+.quote .btn-carpet{border-color:transparent}
+.quote::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;border:24px solid rgba(255,255,255,.05)}
+
+/* extras */
+.extras{background:var(--foam)}
+.extras table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius-lg);overflow:hidden}
+.extras th,.extras td{padding:22px 26px;text-align:left;border-bottom:1px solid var(--line)}
+.extras tr:last-child td{border-bottom:0}
+.extras thead th{font-size:.92rem;font-weight:600;color:var(--ink-soft);background:var(--paper)}
+.extras td:first-child{font-family:"Young Serif",serif;font-size:1.2rem}
+.extras td span{display:block;font-family:"Figtree",sans-serif;font-size:.92rem;color:var(--ink-soft);margin-top:2px}
+.extras td.num{font-weight:700;font-size:1.15rem;white-space:nowrap}
+.extras td.num.save{color:var(--carpet)}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:auto auto;gap:16px}
+.gallery figure{border-radius:var(--radius-lg);overflow:hidden;background:var(--foam);aspect-ratio:3/4}
+.gallery .g-big{grid-row:1/3;aspect-ratio:auto;min-height:520px}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.gallery .note{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.gallery .note p{font-family:"Young Serif",serif;font-size:1.35rem;line-height:1.3}
+
+
+/* reviews */
+.reviews{padding-top:24px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;display:flex;flex-direction:column;gap:16px}
+.rev:nth-child(2){background:var(--ink);color:#fff;border-color:var(--ink)}
+.rev:nth-child(2) small{color:rgba(255,255,255,.7)}
+.stars{color:var(--sun);letter-spacing:3px;font-size:1.1rem}
+.rev blockquote{font-family:"Young Serif",serif;font-size:1.18rem;line-height:1.45;flex:1}
+.rev figcaption{display:flex;align-items:center;gap:12px}
+.rev figcaption small{display:block;color:var(--ink-soft);font-size:.88rem}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--carpet);color:#fff;display:grid;place-items:center;font-weight:700}
+
+/* faq */
+.faq{background:var(--foam)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq-intro{position:sticky;top:110px}
+.faq-intro p{color:var(--ink-soft);margin-top:14px}
+.faq-intro a{color:var(--carpet);font-weight:600}
+.faq-list{display:grid;gap:10px}
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:20px 56px 20px 22px;font-weight:600;font-size:1.05rem;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:22px;top:50%;width:12px;height:12px;border-right:2px solid var(--carpet);border-bottom:2px solid var(--carpet);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{padding:0 22px 22px;color:var(--ink-soft)}
+.faq details p a{color:var(--carpet);font-weight:600}
+
+/* visit */
+.visit{background:var(--white);border-top:1px solid var(--line)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.hours{list-style:none;margin:26px 0 30px;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;padding:13px 4px;border-bottom:1px solid var(--line)}
+.hours li.closed span:last-child{color:var(--ink-soft)}
+.hours li.today{background:var(--foam);border-radius:var(--radius-sm);font-weight:700;padding-left:14px;padding-right:14px}
+.hours li.sun span:last-child::after{content:"$15 self-wash";margin-left:10px;font-size:.78rem;font-weight:700;background:var(--sun);padding:2px 9px;border-radius:999px;vertical-align:2px}
+.contact-list{display:grid;gap:16px;margin-bottom:28px}
+.contact-list a,.contact-list div{display:flex;gap:14px;align-items:flex-start;text-decoration:none}
+.contact-list svg{width:22px;height:22px;flex:none;color:var(--carpet);margin-top:3px}
+.contact-list a:hover strong{color:var(--carpet)}
+.contact-list strong{display:block;font-weight:600}
+.contact-list small{color:var(--ink-soft);font-size:.92rem}
+.map{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);min-height:420px;height:100%;background:var(--foam)}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+.partner{margin-top:28px;padding:22px 24px;border-radius:var(--radius-lg);background:var(--paper);border:1px dashed var(--line);font-size:.98rem}
+.partner a{font-weight:600;color:var(--carpet)}
+.partner img{display:block;height:34px;width:auto;margin-bottom:10px;border-radius:4px}
+
+/* footer */
+footer{background:var(--ink);color:#fff;padding:48px 0 110px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .brand span{color:#fff}
+footer .brand small{color:rgba(255,255,255,.65)}
+footer nav{display:flex;gap:22px;flex-wrap:wrap;font-size:.95rem}
+footer nav a{text-decoration:none;opacity:.8}
+footer nav a:hover{opacity:1;text-decoration:underline}
+footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:.85rem;opacity:.65;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* mobile action bar */
+.actionbar{display:none}
+
+/* page-load moment: the carpet rolls out */
+@keyframes roll{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+.runner::before{animation:roll 1.1s cubic-bezier(.65,0,.35,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.runner figure{animation:rise .8s .55s cubic-bezier(.2,.7,.2,1) both}
+.sun-tag{animation:rise .6s 1s both}
+
+/* responsive */
+@media (max-width:980px){
+  .hero .wrap,.sizer,.visit-grid{grid-template-columns:1fr}
+  .hero-copy{padding-bottom:20px}
+  .runner{min-height:520px}
+  .svc-grid{grid-template-columns:1fr;gap:56px}
+  .svc{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:start}
+  .svc figure{margin-bottom:0}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery .g-big{grid-row:auto;min-height:0;aspect-ratio:3/4}
+  .gallery .note{grid-column:1/3}
+  .rev-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr;gap:28px}
+  .faq-intro{position:static}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .strip .hide-sm{display:none}
+  nav.main{position:fixed;inset:74px 0 auto 0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 22px;border-bottom:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+  nav.main.open{opacity:1;transform:none;pointer-events:auto}
+  nav.main a:not(.btn){padding:14px 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  nav.main .btn{margin-top:16px}
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+  .hero{padding-top:40px}
+  section{padding:72px 0}
+  .runner{min-height:440px}
+  .runner figure{max-width:320px}
+  .sun-tag{width:108px;height:108px;right:4px;bottom:30px}
+  .sun-tag b{font-size:1.9rem}
+  .svc{grid-template-columns:1fr}
+  .sizes{grid-template-columns:repeat(5,1fr);gap:6px}
+  .sizes button{padding:12px 2px 10px;font-size:.85rem}
+  .sizes svg{height:22px}
+  .quote{padding:30px 24px}
+  .extras th,.extras td{padding:16px 14px}
+  .extras td:first-child{font-size:1.05rem}
+  .map,.map iframe{min-height:320px}
+  .actionbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(245,248,249,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .actionbar .btn{padding:.85em 1em}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"PetGrooming","name":"Puppy Palace Dog Wash","telephone":"+1-443-348-3964","email":"puppypalacedogwash@gmail.com","url":"https://www.puppypalacedogwash.com","address":{"@type":"PostalAddress","streetAddress":"1724 Woodlawn Dr, Suite 14","addressLocality":"Baltimore","addressRegion":"MD","postalCode":"21207","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Friday","Saturday"],"opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"14:00"}],"sameAs":["https://www.instagram.com/puppypalacedogwash/","https://www.facebook.com/Puppy-Palace-Dog-Wash-102035642489601/"]}
+</script>
+</head>
+<body>
+
+<div class="strip">
+  <div class="wrap">
+    <span class="sunday">Sundays: self-wash is just $15</span>
+    <div class="socials">
+      <a class="hide-sm" href="tel:+14433483964">(443) 348-3964</a>
+      <a href="https://www.instagram.com/puppypalacedogwash/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/Puppy-Palace-Dog-Wash-102035642489601/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Puppy Palace Dog Wash home">
+      <img src="img/mascot-head.webp" alt="">
+      <span>Puppy Palace<small>Dog Wash &amp; Grooming</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="main" id="nav">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Hours &amp; location</a>
+      <a class="btn btn-carpet" href="https://puppypalacedogwash.portal.gingrapp.com/#/secure/book/bookings-deposits/bookings" target="_blank" rel="noopener">Book a bath</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="where">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        Woodlawn's first self-service dog wash
+      </span>
+      <h1 id="hero-title">Treat your dog like royalty, without wrecking your bathroom.</h1>
+      <p class="lead">Wash your pup yourself in our raised tubs with premium shampoo, towels and pet-safe dryers all included. Or hand them to our team for a full bath or a custom groom.</p>
+      <div class="hero-actions">
+        <a class="btn btn-carpet" href="https://puppypalacedogwash.portal.gingrapp.com/#/secure/book/bookings-deposits/bookings" target="_blank" rel="noopener">Book a bath</a>
+        <a class="btn btn-line" href="tel:+14433483964">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          (443) 348-3964
+        </a>
+      </div>
+      <div class="status" id="status" aria-live="polite"><span class="dot"></span><span>Checking today's hours</span></div>
+    </div>
+
+    <div class="runner" aria-hidden="false">
+      <figure class="mascot">
+        <img class="tag" src="img/tagline.webp" alt="Treat your fur baby like royalty">
+        <img class="dog" src="img/mascot.webp" alt="The Puppy Palace mascot: a smiling dog wearing a crown, surrounded by bubbles">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services" aria-labelledby="svc-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="svc-title">Three ways to get clean</h2>
+      <p>Walk in and do it yourself, or book a spot and let us handle everything.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc">
+        <figure><img loading="lazy" decoding="async" src="img/g1.webp" alt="A fluffy doodle sitting in a raised stainless steel wash tub"></figure>
+        <div>
+          <span class="pill">Walk-ins welcome</span>
+          <h3>Self-service wash</h3>
+          <div class="price"><strong>$20</strong><small>$15 every Sunday</small></div>
+          <p>You do the washing, we do the cleanup. Our staff will show you how to brush, bathe and dry like a pro.</p>
+          <ul>
+            <li>Premium shampoo</li>
+            <li>Brushes, combs and towels</li>
+            <li>Pet-friendly dryers</li>
+          </ul>
+          <a class="more" href="#extras">See add-ons</a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <figure><img loading="lazy" decoding="async" src="img/self.webp" alt="A golden retriever being rinsed with a sprayer"></figure>
+        <div>
+          <span class="pill">By appointment</span>
+          <h3>Full-service wash</h3>
+          <div class="price"><strong>From $40</strong><small>based on size and breed</small></div>
+          <p>Stay and watch, or drop them off and run errands. Either way, they get the red carpet treatment in a calm, low-stress space.</p>
+          <ul>
+            <li>Full bath and dry by our team</li>
+            <li>Wait in the shop or drop off</li>
+          </ul>
+          <a class="more" href="#pricing">Price it by size</a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <figure><img loading="lazy" decoding="async" src="img/g2.webp" alt="A Puppy Palace groomer working on a black and white dog"></figure>
+        <div>
+          <span class="pill">By appointment</span>
+          <h3>Professional grooming</h3>
+          <div class="price"><strong>Call for a quote</strong><small>based on breed and weight</small></div>
+          <p>One-on-one time with a stylist who gives your dog a cut that suits them. No rushed shave-downs, no assembly line.</p>
+          <ul>
+            <li>Custom cut and style</li>
+            <li>One dog, one stylist</li>
+          </ul>
+          <a class="more" href="tel:+14433483964">Call to book</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" aria-labelledby="price-title">
+  <div class="wrap sizer">
+    <div>
+      <h2 id="price-title">What does a full-service bath cost?</h2>
+      <p style="color:var(--ink-soft);margin-top:14px">Pick your dog's size for a price range. Coat type and breed set the final number, so give us a call and we'll tell you exactly.</p>
+      <div class="sizes" role="group" aria-label="Dog size">
+        <button type="button" data-size="0" aria-pressed="false"><svg viewBox="0 0 40 24"><circle cx="20" cy="14" r="7"/></svg>XS<small>&lt;15 lb</small></button>
+        <button type="button" data-size="1" aria-pressed="true"><svg viewBox="0 0 40 24"><circle cx="20" cy="13.5" r="8.5"/></svg>S<small>16–30</small></button>
+        <button type="button" data-size="2" aria-pressed="false"><svg viewBox="0 0 40 24"><circle cx="20" cy="13" r="10"/></svg>M<small>31–50</small></button>
+        <button type="button" data-size="3" aria-pressed="false"><svg viewBox="0 0 40 24"><circle cx="20" cy="12.5" r="11.5"/></svg>L<small>51–70</small></button>
+        <button type="button" data-size="4" aria-pressed="false"><svg viewBox="0 0 40 24"><circle cx="20" cy="12" r="12"/></svg>XL<small>71+ lb</small></button>
+      </div>
+    </div>
+    <div class="quote" aria-live="polite">
+      <div class="label">Full-service bath for a</div>
+      <div class="range" id="range">$48–$72</div>
+      <div class="weight" id="weight">Small dog, 16 to 30 lbs</div>
+      <p class="note">Includes a full bath and dry by our team. Add nails, teeth or ears below.</p>
+      <a class="btn btn-carpet" href="tel:+14433483964">Call for exact pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="extras" id="extras" aria-labelledby="extras-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="extras-title">Quick add-ons</h2>
+      <p>Come in just for these, or add them after your self-wash and pay less.</p>
+    </div>
+    <table>
+      <thead><tr><th scope="col">Service</th><th scope="col">Drop-in</th><th scope="col">With your wash</th></tr></thead>
+      <tbody>
+        <tr><td>Nail trim<span>Squirmy pup? We've got it.</span></td><td class="num">$10</td><td class="num save">$8</td></tr>
+        <tr><td>Teeth brushing<span>A proper brush for fresher breath.</span></td><td class="num">$11</td><td class="num">$11</td></tr>
+        <tr><td>Ear cleaning<span>Inner and outer ear, done gently.</span></td><td class="num">$7</td><td class="num save">$5</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-label="Photos from the shop">
+  <div class="wrap gallery">
+    <figure class="g-big"><img loading="lazy" decoding="async" src="img/full.webp" alt="A cocker spaniel covered in shampoo suds"></figure>
+    <figure class="g-small"><img loading="lazy" decoding="async" src="img/groom.webp" alt="A Pomeranian getting a scissor trim"></figure>
+    <div class="note">
+      <p>See who walked the red carpet this week.</p>
+      <a class="btn btn-line" href="https://www.instagram.com/puppypalacedogwash/" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews" aria-labelledby="rev-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="rev-title">What pup parents say</h2>
+      <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Puppy+Palace+Dog+Wash+1724+Woodlawn+Dr+Baltimore+MD" target="_blank" rel="noopener">Read all reviews</a>
+    </div>
+    <div class="rev-grid">
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>[Paste a real Google review here. Two or three sentences reads best.]</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">A</span><span><strong>Customer name</strong><small>Google review</small></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>[Paste a real review about the self-service wash here.]</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">B</span><span><strong>Customer name</strong><small>Google review</small></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>[Paste a real review about grooming or the staff here.]</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">C</span><span><strong>Customer name</strong><small>Facebook review</small></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div class="faq-intro">
+      <h2 id="faq-title">Good questions</h2>
+      <p>Don't see yours? Call <a href="tel:+14433483964">(443) 348-3964</a> and we'll sort it out.</p>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>Do I need an appointment?</summary>
+        <p>Not for the self-service wash. Just walk in during open hours. Full-service baths and professional grooming are by appointment, so book online or give us a call.</p>
+      </details>
+      <details>
+        <summary>What should I bring?</summary>
+        <p>Just your pup. Shampoo, brushes, combs, towels and pet-friendly dryers are all here, and our staff will show you how to use everything.</p>
+      </details>
+      <details>
+        <summary>Do you take big dogs?</summary>
+        <p>Absolutely. Our raised tubs fit dogs of every size, and full-service baths are priced from extra small all the way up to 71 lbs and over.</p>
+      </details>
+      <details>
+        <summary>Do you require vaccinations?</summary>
+        <p>Give us a call before your first full-service or grooming visit and we'll walk you through what we need.</p>
+      </details>
+      <details>
+        <summary>Can I drop my dog off?</summary>
+        <p>Yes. For a full-service wash you can wait in the shop or drop off and run errands. We'll take good care of them either way.</p>
+      </details>
+      <details>
+        <summary>How does Sunday Funday work?</summary>
+        <p>Every Sunday from 10 am to 2 pm, the self-service wash is $15 instead of $20. No coupon needed.</p>
+      </details>
+      <details>
+        <summary>How much does grooming cost?</summary>
+        <p>It depends on your dog's breed, size and coat. Call us with those details and we'll give you an exact price.</p>
+      </details>
+      <details>
+        <summary>Can someone come to my house?</summary>
+        <p>Our partners at <a href="https://www.puppylovemobilepetgrooming.com/" target="_blank" rel="noopener">Puppy Love Mobile Pet Grooming</a> bring the grooming to your door.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visit-title">
+  <div class="wrap visit-grid">
+    <div>
+      <h2 id="visit-title">Come see us</h2>
+      <ul class="hours" id="hours">
+        <li data-day="2"><span>Tuesday</span><span>9:00 am – 5:30 pm</span></li>
+        <li data-day="3"><span>Wednesday</span><span>9:00 am – 5:30 pm</span></li>
+        <li data-day="4" class="closed"><span>Thursday</span><span>Closed</span></li>
+        <li data-day="5"><span>Friday</span><span>9:00 am – 5:30 pm</span></li>
+        <li data-day="6"><span>Saturday</span><span>9:00 am – 5:30 pm</span></li>
+        <li data-day="0" class="sun"><span>Sunday</span><span>10:00 am – 2:00 pm</span></li>
+        <li data-day="1" class="closed"><span>Monday</span><span>Closed</span></li>
+      </ul>
+      <div class="contact-list">
+        <a href="https://www.google.com/maps/search/?api=1&query=1724+Woodlawn+Dr+Suite+14+Baltimore+MD+21207" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span><strong>1724 Woodlawn Dr, Suite 14</strong><small>Baltimore, MD 21207. Tap for directions</small></span>
+        </a>
+        <a href="tel:+14433483964">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span><strong>(443) 348-3964</strong><small>Call for grooming and full-service pricing</small></span>
+        </a>
+        <a href="mailto:puppypalacedogwash@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span><strong>puppypalacedogwash@gmail.com</strong><small>We reply to every message</small></span>
+        </a>
+      </div>
+      <a class="btn btn-carpet" href="https://puppypalacedogwash.portal.gingrapp.com/#/secure/book/bookings-deposits/bookings" target="_blank" rel="noopener">Book a bath</a>
+      <a class="btn btn-line" style="margin-left:8px" href="https://puppypalacedogwash.portal.gingrapp.com/#/secure/more/contact-us" target="_blank" rel="noopener">Send a message</a>
+      <div class="partner"><img loading="lazy" decoding="async" src="img/partner.webp" alt="Puppy Love Mobile Pet Grooming logo" width="155" height="40">Can't make it in? Our partners at <a href="https://www.puppylovemobilepetgrooming.com/" target="_blank" rel="noopener">Puppy Love Mobile Pet Grooming</a> will come to you.</div>
+    </div>
+    <div class="map">
+      <iframe title="Map to Puppy Palace Dog Wash" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=1724+Woodlawn+Dr+Suite+14,+Baltimore,+MD+21207&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><span>Puppy Palace<small>Dog Wash &amp; Grooming, Woodlawn</small></span></a>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Hours</a>
+      <a href="https://www.instagram.com/puppypalacedogwash/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/Puppy-Palace-Dog-Wash-102035642489601/" target="_blank" rel="noopener">Facebook</a>
+    </nav>
+    <div class="fine">
+      <span>© <span id="yr">2026</span> Puppy Palace Dog Wash</span>
+      <a href="https://www.privacypolicies.com/live/67c50e00-9406-4474-bad3-6140c45a0bdb" target="_blank" rel="noopener">Privacy policy</a>
+    </div>
+  </div>
+</footer>
+
+<div class="actionbar">
+  <a class="btn btn-line" href="tel:+14433483964">Call</a>
+  <a class="btn btn-carpet" href="https://puppypalacedogwash.portal.gingrapp.com/#/secure/book/bookings-deposits/bookings" target="_blank" rel="noopener">Book a bath</a>
+</div>
+
+<script>
+(function(){
+  // mobile menu
+  var t=document.querySelector('.menu-toggle'),n=document.getElementById('nav');
+  t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false')})});
+
+  // size picker
+  var sizes=[
+    ['$40–$64','Extra small dog, under 15 lbs'],
+    ['$48–$72','Small dog, 16 to 30 lbs'],
+    ['$53–$81','Medium dog, 31 to 50 lbs'],
+    ['$60–$89','Large dog, 51 to 70 lbs'],
+    ['$67–$98','Extra large dog, 71 lbs and up']
+  ];
+  var btns=document.querySelectorAll('.sizes button');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');
+    var s=sizes[+b.dataset.size];
+    document.getElementById('range').textContent=s[0];
+    document.getElementById('weight').textContent=s[1];
+  })});
+
+  // live open/closed status in Baltimore time
+  var hours={0:[10,14],1:null,2:[9,17.5],3:[9,17.5],4:null,5:[9,17.5],6:[9,17.5]};
+  var names=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  function fmt(h){var hr=Math.floor(h),m=Math.round((h-hr)*60),ap=hr>=12?'pm':'am';hr=hr%12||12;return hr+(m?':'+String(m).padStart(2,'0'):'')+' '+ap}
+  try{
+    var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var get=function(k){return (p.find(function(x){return x.type===k})||{}).value};
+    var day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday'));
+    var now=(+get('hour')%24)+(+get('minute'))/60;
+    var today=document.querySelector('#hours li[data-day="'+day+'"]');
+    if(today) today.classList.add('today');
+    var h=hours[day],dot=document.querySelector('#status .dot'),txt=document.querySelector('#status span:last-child');
+    if(h&&now>=h[0]&&now<h[1]){
+      dot.classList.add('open');
+      txt.textContent='Open now until '+fmt(h[1])+(day===0?', $15 self-wash today':'');
+    }else{
+      dot.classList.add('closed');
+      var d=day,label;
+      for(var i=0;i<8;i++){
+        var c=(day+i)%7,hc=hours[c];
+        if(!hc) continue;
+        if(i===0&&now<hc[0]){label='today at '+fmt(hc[0]);break}
+        if(i===1){label='tomorrow at '+fmt(hc[0]);break}
+        if(i>1){label=names[c]+' at '+fmt(hc[0]);break}
+      }
+      txt.textContent='Closed now. Opens '+label;
+    }
+  }catch(e){document.getElementById('status').style.display='none'}
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

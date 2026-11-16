@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.puppypalacedogwash.com/sitemap.xml
