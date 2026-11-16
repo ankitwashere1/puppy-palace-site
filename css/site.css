@@ -283,3 +283,40 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.12);padding-top:2
 .related a:hover{border-color:var(--carpet);color:var(--carpet)}
 @media (max-width:860px){.page-grid{grid-template-columns:1fr;gap:32px}.side{position:static}.page-hero{padding:36px 0 24px}}
 .page-hero + section{padding-top:8px}
+
+/* unified hero (v2) */
+.hero{padding:40px 0 72px;overflow:visible}
+.hero .wrap{display:block}
+.hero-card{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:56px;background:var(--white);border:1px solid var(--line);border-radius:32px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(20,37,64,.35)}
+.hero-card .runner{align-self:stretch;min-height:560px;display:flex;justify-content:center;align-items:flex-end;padding-top:40px}
+.hero-card .runner::before{top:0;width:62%}
+.hero-card .runner figure{margin:0;max-width:380px;border-color:var(--white);border-bottom:0;border-radius:200px 200px 0 0;box-shadow:none}
+.hero-card .hero-copy{padding:56px 56px 56px 0}
+.hero-card h1{font-size:clamp(2.1rem,3.6vw,3.1rem);margin-bottom:18px}
+.hero-card .lead{max-width:48ch}
+@media (max-width:860px){
+  .hero{padding:20px 0 48px}
+  .hero-card{grid-template-columns:1fr;gap:0;border-radius:26px;text-align:center}
+  .hero-card .runner{min-height:0;padding-top:28px}
+  .hero-card .runner figure{max-width:270px}
+  .hero-card .hero-copy{padding:28px 22px 30px}
+  .hero-card .where{justify-content:center}
+  .hero-card .lead{margin-left:auto;margin-right:auto}
+  .hero-card .hero-actions{justify-content:center}
+}
+/* equal-height cards */
+.svc{display:flex;flex-direction:column}
+.svc>div{display:flex;flex-direction:column;flex:1}
+.svc .price{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:2px}
+.svc .price strong{white-space:nowrap}
+.svc a.more{margin-top:auto;align-self:flex-start}
+.rev{height:100%}
+.rev figcaption{margin-top:auto}
+@media (max-width:860px){
+  .hero-card h1{font-size:2.05rem}
+  .hero-card .where{font-size:.92rem;margin-bottom:14px}
+  .hero-card .runner figure.mascot{aspect-ratio:auto;padding:44px 16px 0}
+  .hero-card .runner figure.mascot .dog{height:auto;max-height:230px}
+}
+.svc .pill{align-self:flex-start}
+@media (max-width:860px){.hero-card .status{font-size:.88rem}}
