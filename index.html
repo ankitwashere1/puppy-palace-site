@@ -87,7 +87,7 @@
 
     <div class="svc-grid">
       <article class="svc">
-        <figure><img loading="lazy" decoding="async" src="img/g1.webp" alt="A fluffy doodle sitting in a raised stainless steel wash tub"></figure>
+        <figure><img loading="lazy" decoding="async" src="img/g1.webp" data-rotate="img/ig/DTBG7tODq86.webp,img/ig/DB6w9yDSxZ-.webp,img/ig/DRVh2G7DsIb.webp,img/ig/C9zmpqbpiiB.webp,img/ig/DIUmGdbSHnc.webp" alt="A fluffy doodle sitting in a raised stainless steel wash tub"></figure>
         <div>
           <span class="pill">First come first serve</span>
           <h3>Self-service wash</h3>
@@ -103,7 +103,7 @@
       </article>
 
       <article class="svc">
-        <figure><img loading="lazy" decoding="async" src="img/self.webp" alt="A golden retriever being rinsed with a sprayer"></figure>
+        <figure><img loading="lazy" decoding="async" src="img/self.webp" data-rotate="img/ig/DGoRPbyyoHp.webp,img/ig/C-OQwtypvbp.webp,img/ig/DE28RHWSQAa.webp,img/ig/DJ60hrhN1P2.webp,img/ig/DCaPsNtSBtB.webp,img/ig/DG6TL-pSOAK.webp,img/ig/DN4B-s_jkhs.webp" alt="A golden retriever being rinsed with a sprayer"></figure>
         <div>
           <span class="pill">By appointment</span>
           <h3>Full-service wash</h3>
@@ -118,7 +118,7 @@
       </article>
 
       <article class="svc">
-        <figure><img loading="lazy" decoding="async" src="img/g2.webp" alt="A Puppy Palace groomer working on a black and white dog"></figure>
+        <figure><img loading="lazy" decoding="async" src="img/g2.webp" data-rotate="img/ig/Dd-Z9NfuSH3.webp,img/ig/DRA7vgMDkT4.webp,img/ig/DHqzg8qOrA_.webp,img/ig/DHQ0v1yucYF.webp,img/ig/DCaOnGrSlT7.webp,img/ig/C_v1LvUJz7-.webp,img/ig/DH9_ZretUn0.webp,img/ig/DDdCoPbxYn6.webp" alt="A Puppy Palace groomer working on a black and white dog"></figure>
         <div>
           <span class="pill">By appointment</span>
           <h3>Professional grooming</h3>
@@ -178,8 +178,8 @@
 
 <section aria-label="Photos from the shop">
   <div class="wrap gallery">
-    <figure class="g-big"><img loading="lazy" decoding="async" src="img/full.webp" alt="A cocker spaniel covered in shampoo suds"></figure>
-    <figure class="g-small"><img loading="lazy" decoding="async" src="img/groom.webp" alt="A Pomeranian getting a scissor trim"></figure>
+    <figure class="g-big"><img loading="lazy" decoding="async" src="img/full.webp" data-rotate="img/ig/DLA45CHyLfa.webp,img/ig/DK2N8uBOxJp.webp,img/ig/DKxbh81Skth.webp,img/ig/DKmZ1JxOqf1.webp,img/ig/DI6x0XRuyiJ.webp,img/ig/DI6xKuiOWt5.webp,img/ig/DFzAxjYthQp.webp,img/ig/C9znSyUprGt.webp" alt="A cocker spaniel covered in shampoo suds"></figure>
+    <figure class="g-small"><img loading="lazy" decoding="async" src="img/groom.webp" data-rotate="img/ig/DHpJtikSbfG.webp,img/ig/DEbKl1PyLRP.webp,img/ig/DDK6Ka-yY76.webp,img/ig/DCsA7xsS_wR.webp,img/ig/DChg0RaSdGO.webp,img/ig/DCH2XCqyn4l.webp,img/ig/DAoyYQ9JEnL.webp,img/ig/C-OL8_Epzbs.webp" alt="A Pomeranian getting a scissor trim"></figure>
     <div class="note">
       <p>See who walked the red carpet this week.</p>
       <a class="btn btn-line" href="https://www.instagram.com/puppypalacedogwash/" target="_blank" rel="noopener">Follow on Instagram</a>
@@ -368,6 +368,37 @@
 /* open directions in Apple Maps on iPhone/iPad, Google Maps everywhere else */
 (function(){var ios=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 if(!ios)return;document.querySelectorAll('.js-directions').forEach(function(a){a.href='https://maps.apple.com/?daddr=1724+Woodlawn+Dr+Suite+14,+Baltimore,+MD+21207&q=Puppy+Palace+Dog+Wash';});})();
+
+/* crossfade rotating photos: one figure changes at a time, only while on screen */
+(function(){
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var figs=[].slice.call(document.querySelectorAll('img[data-rotate]')).map(function(base,k){
+    var fig=base.parentNode, list=[base.getAttribute('src')].concat(base.getAttribute('data-rotate').split(','));
+    fig.classList.add('rotator');
+    return {fig:fig, cur:base, list:list, i:0, visible:false, alt:base.alt};
+  });
+  if(!figs.length) return;
+  if ('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){figs.forEach(function(f){if(f.fig===e.target)f.visible=e.isIntersecting;});});},{threshold:.25});
+    figs.forEach(function(f){io.observe(f.fig);});
+  } else figs.forEach(function(f){f.visible=true;});
+  function next(f){
+    var n=(f.i+1)%f.list.length, img=new Image();
+    img.decoding='async'; img.alt=f.alt; img.className='rot';
+    img.onload=function(){
+      f.fig.appendChild(img);
+      requestAnimationFrame(function(){requestAnimationFrame(function(){img.classList.add('on');});});
+      var old=f.cur; setTimeout(function(){ if(old.parentNode) old.parentNode.removeChild(old); }, 1600);
+      f.cur=img; f.i=n;
+    };
+    img.src=f.list[n];
+  }
+  var turn=0;
+  setInterval(function(){
+    if(document.hidden) return;
+    for(var t=0;t<figs.length;t++){ var f=figs[(turn+t)%figs.length]; if(f.visible){ next(f); turn=(turn+t+1)%figs.length; return; } }
+  }, 2600);
+})();
 </script>
 </body>
 </html>

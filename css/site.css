@@ -324,3 +324,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.12);padding-top:2
 .vax-note svg{width:22px;height:22px;flex:none;color:var(--carpet);margin-top:1px}
 .vax-note strong{color:var(--ink)}
 .page-hero .vax-note{margin-top:0;margin-bottom:8px}
+.rotator{position:relative}
+.rotator img.rot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease}
+.rotator img.rot.on{opacity:1}
+.services .vax-note{grid-column:1/-1;width:100%;max-width:none}
