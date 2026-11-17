@@ -320,3 +320,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.12);padding-top:2
 }
 .svc .pill{align-self:flex-start}
 @media (max-width:860px){.hero-card .status{font-size:.88rem}}
+.vax-note{display:flex;gap:12px;align-items:flex-start;margin-top:28px;padding:16px 20px;border-radius:16px;background:var(--white);border:1px solid var(--line);color:var(--ink-soft);font-size:.98rem}
+.vax-note svg{width:22px;height:22px;flex:none;color:var(--carpet);margin-top:1px}
+.vax-note strong{color:var(--ink)}
+.page-hero .vax-note{margin-top:0;margin-bottom:8px}

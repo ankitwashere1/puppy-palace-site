@@ -70,7 +70,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
             (443) 348-3964
           </a>
-          <a class="btn btn-line" href="#services">See services</a>
+          <a class="btn btn-line js-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Puppy+Palace+Self-Service+Dog+Wash+1724+Woodlawn+Dr+Baltimore+MD+21207&amp;destination_place_id=ChIJVa5c_DsZyIkRV1--MZrqBTs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:18px;height:18px"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Get directions</a>
         </div>
         <div class="status" id="status" aria-live="polite"><span class="dot"></span><span>Checking today's hours</span></div>
       </div>
@@ -132,6 +132,7 @@
         </div>
       </article>
     </div>
+    <p class="vax-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Vaccinations required.</strong> Every dog that comes in for a wash or any service must be up to date on their vaccinations.</span></p>
   </div>
 </section>
 
@@ -233,7 +234,7 @@
       </details>
       <details>
         <summary>Do you require vaccinations?</summary>
-        <p>Give us a call before your first full-service or grooming visit and we'll walk you through what we need.</p>
+        <p>Yes. Every dog that comes in for a wash or any other service must be up to date on their vaccinations.</p>
       </details>
       <details>
         <summary>Can I drop my dog off?</summary>
@@ -242,10 +243,6 @@
       <details>
         <summary>How much does grooming cost?</summary>
         <p>It depends on your dog's breed, size and coat. Call us with those details and we'll give you an exact price.</p>
-      </details>
-      <details>
-        <summary>Can someone come to my house?</summary>
-        <p>Our partners at <a href="https://www.puppylovemobilepetgrooming.com/" target="_blank" rel="noopener">Puppy Love Mobile Pet Grooming</a> bring the grooming to your door.</p>
       </details>
     </div>
   </div>
@@ -279,7 +276,6 @@
         </a>
       </div>
       <a class="btn btn-line" href="https://puppypalacedogwash.portal.gingrapp.com/#/secure/more/contact-us" target="_blank" rel="noopener">Send a message</a>
-      <div class="partner"><img loading="lazy" decoding="async" src="img/partner.webp" alt="Puppy Love Mobile Pet Grooming logo" width="155" height="40">Can't make it in? Our partners at <a href="https://www.puppylovemobilepetgrooming.com/" target="_blank" rel="noopener">Puppy Love Mobile Pet Grooming</a> will come to you.</div>
     </div>
     <div class="map">
       <iframe title="Map to Puppy Palace Dog Wash" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=1724+Woodlawn+Dr+Suite+14,+Baltimore,+MD+21207&output=embed"></iframe>
@@ -368,6 +364,10 @@
   }catch(e){document.getElementById('status').style.display='none'}
   document.getElementById('yr').textContent=new Date().getFullYear();
 })();
+
+/* open directions in Apple Maps on iPhone/iPad, Google Maps everywhere else */
+(function(){var ios=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+if(!ios)return;document.querySelectorAll('.js-directions').forEach(function(a){a.href='https://maps.apple.com/?daddr=1724+Woodlawn+Dr+Suite+14,+Baltimore,+MD+21207&q=Puppy+Palace+Dog+Wash';});})();
 </script>
 </body>
 </html>
