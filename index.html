@@ -375,7 +375,7 @@ if(!ios)return;document.querySelectorAll('.js-directions').forEach(function(a){a
   var figs=[].slice.call(document.querySelectorAll('img[data-rotate]')).map(function(base,k){
     var fig=base.parentNode, list=[base.getAttribute('src')].concat(base.getAttribute('data-rotate').split(','));
     fig.classList.add('rotator');
-    return {fig:fig, cur:base, list:list, i:0, visible:false, alt:base.alt};
+    return {fig:fig, base:base, cur:base, list:list, i:0, visible:false, alt:base.alt};
   });
   if(!figs.length) return;
   if ('IntersectionObserver' in window){
@@ -388,7 +388,7 @@ if(!ios)return;document.querySelectorAll('.js-directions').forEach(function(a){a
     img.onload=function(){
       f.fig.appendChild(img);
       requestAnimationFrame(function(){requestAnimationFrame(function(){img.classList.add('on');});});
-      var old=f.cur; setTimeout(function(){ if(old.parentNode) old.parentNode.removeChild(old); }, 1600);
+      var old=f.cur; if(old!==f.base) setTimeout(function(){ if(old.parentNode) old.parentNode.removeChild(old); }, 1600);
       f.cur=img; f.i=n;
     };
     img.src=f.list[n];
