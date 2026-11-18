@@ -423,3 +423,10 @@ section{padding:64px 0}
   .extras .extras-table th{font-size:.78rem}
   .extras-note{border-radius:16px;font-size:.9rem;padding:10px 14px}
 }
+/* v4: bigger Woodlawn eyebrow, location under logo */
+.hero-copy .where{font-size:1.12rem;gap:9px}
+.hero-copy .where svg{width:21px;height:21px}
+.brand small.loc{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--carpet);margin-top:2px}
+footer .brand small.loc{color:var(--sun)}
+@media (max-width:860px){.hero-card .where{font-size:1rem}}
+@media (max-width:420px){.hero-card .where{display:block;text-align:center;text-wrap:balance;font-size:1rem;line-height:1.35}.hero-card .where svg{display:inline-block;vertical-align:-3px;margin-right:4px}}
